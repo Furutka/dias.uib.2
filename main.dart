@@ -6,70 +6,58 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'MYAPP',
+      theme: ThemeData(
+        primaryColor: Colors.blue,
+      ),
       home: Scaffold(
         appBar: AppBar(
           title: Text('MYAPP'),
           backgroundColor: Colors.blue,
         ),
         body: Center(
-          child: Stack(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Container(
-                width: 200,
-                height: 200,
-                color: Colors.blue,
-              ),
-              Positioned(
-                top: 20,
-                left: 20,
+              SizedBox(
+                width: 200.0,
+                height: 50.0,
                 child: ElevatedButton(
                   onPressed: () {},
                   child: Text('Button'),
                   style: ElevatedButton.styleFrom(
                     primary: Colors.red,
-                    minimumSize: Size(150, 50),
                   ),
                 ),
               ),
-              Positioned(
-                top: 70,
-                left: 20,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text('Button'),
+              ElevatedButton(
+                onPressed: () {},
+                child: Text('Button'),
+              ),
+              ElevatedButton.icon(
+                onPressed: () {},
+                icon: Icon(Icons.drive_file_move),
+                label: Text('Data'),
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                child: Text('Button'),
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                child: Text('Button'),
+              ),
+              Text(
+                'Hello World! This is a Text Widget.',
+                style: TextStyle(
+                  color: Colors.yellow,
+                  backgroundColor: Colors.black,
                 ),
               ),
-              Positioned(
-                top: 120,
-                left: 20,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text('Button'),
-                ),
-              ),
-              Positioned(
-                top: 170,
-                left: 20,
-                child: IconButton(
-                  icon: Icon(Icons.data_usage),
-                  onPressed: () {},
-                ),
-              ),
-              Positioned(
-                top: 120,
-                left: 200,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text('Another Button'),
-                ),
-              ),
-              Positioned(
-                top: 170,
-                left: 300,
-                child: Text(
-                  'Hello World!',
-                  style: TextStyle(fontSize: 18),
-                ),
+              IconButton(
+                icon: Icon(Icons.volume_up),
+                onPressed: () {},
+                tooltip: 'Text Speaker',
               ),
             ],
           ),
